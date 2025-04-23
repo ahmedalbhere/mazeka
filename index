@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صالون مزيكا</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎵 صالون مزيكا للحلاقة</h1>
+      <p>احجز دورك بسرعة وشوف قائمة الانتظار مباشرة</p>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <h2>احجز موعدك الآن</h2>
+        <form id="bookingForm">
+          <input type="text" id="name" placeholder="اسمك" required>
+          <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+          <button type="submit">احجز</button>
+        </form>
+      </section>
+
+      <section class="queue-section">
+        <h2>قائمة الانتظار الحالية 🎯</h2>
+        <p id="queueCount">عدد المنتظرين: 0</p>
+        <ul id="waitingList"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
