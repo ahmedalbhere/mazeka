@@ -1,0 +1,35 @@
+const form = document.getElementById('bookingForm');
+const list = document.getElementById('waitingList');
+const queueCount = document.getElementById('queueCount');
+
+let queue = [];
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+
+  if (!name || !phone) return;
+
+  const client = {
+    id: Date.now(),
+    name,
+    phone
+  };
+
+  queue.push(client);
+  updateQueue();
+  form.reset();
+});
+
+function updateQueue() {
+  list.innerHTML = '';
+  queueCount.textContent = `عدد المنتظرين: ${queue.length}`;
+
+  queue.forEach((client, index) => {
+    const item = document.createElement('li');
+    item.textContent = `${index + 1}. ${client.name} (${client.phone})`;
+    list.appendChild(item);
+  });
+}
